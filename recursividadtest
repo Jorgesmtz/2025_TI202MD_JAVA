@@ -1,0 +1,25 @@
+package Tema3EstructurasNoLineales.recursividad;
+
+/*
+*ITESS-TICS 20225 Estructura y Organización de Datos
+*Agosto Dicimebre 2025
+*Docente:Francisco Javier Montecillo Puente
+*Descripción:Unidad 3 estructura no lineales 
+*objetivo: Sumar todos los elementos de un arreglo de forma 
+binaria.
+*Programador: Jorge Salvador Martinez Ayala 
+*Fecha:30/11/2025
+ */
+public class binarySumTest {
+    public static void main(String[] args) {
+        System.out.println("Aguilar Hernandez Oliver");
+        int [] array1 = {1 ,257,22,4,18,20};
+        int [] array2 = {2,4,6,8,10};
+        int [] array3 = {10,11,12,13,3,2};
+        
+        System.out.println( binarySum.BinarySum(array1, 0, 2));
+        System.out.println( binarySum.BinarySum(array2, 0, 4));
+        System.out.println( binarySum.BinarySum(array3, 0, 3));
+
+    }
+}
