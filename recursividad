@@ -6,7 +6,7 @@ package Tema3EstructurasNoLineales.recursividad;
 *Descripción:Unidad 3 estructura no lineales 
         
 *objetivo: Sumar todos los elementos de un arreglo de forma 
-binaria donde se parta ala mitad y se sumen los elementos de cada lado
+binaria 
 *Programador: Jorge Salvador Martinez Ayala
 *Fecha:27/11/2025
  */
