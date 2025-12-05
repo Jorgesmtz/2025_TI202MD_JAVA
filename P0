@@ -1,0 +1,59 @@
+package Tema3EstructurasNoLineales.recursividad;
+
+/*
+*ITESS-TICS 20225 Estructura y Organización de Datos
+*Agosto Dicimebre 2025
+*Docente:Francisco Javier Montecillo Puente
+*Descripción:Unidad 3 estructura no lineales 
+*objetivo: Mostrar relaciones en un arbol 
+*Programador: Jorge Salvador Martinez Ayala 
+*Fecha:04/12/2025
+ */
+
+import java.util.*;
+
+public class P0_Relaciones {
+
+  
+    static class Node {
+        String value;
+        Node parent;
+        List<Node> children = new ArrayList<>();
+
+        Node(String v, Node p) { value = v; parent = p; }
+    }
+
+    public static void main(String[] args) {
+
+        Node A = new Node("A", null);
+        Node B = new Node("B", A);
+        Node C = new Node("C", A);
+        Node D = new Node("D", B);
+        Node E = new Node("E", B);
+
+        A.children.add(B); A.children.add(C);
+        B.children.add(D); B.children.add(E);
+
+        System.out.println("Padre de B: " + B.parent.value);
+
+    
+        System.out.print("Hijos de A: ");
+        for (Node ch : A.children) System.out.print(ch.value + " ");
+        System.out.println();
+
+ 
+        System.out.print("Hermanos de B: ");
+        for (Node sib : B.parent.children) if (sib != B) System.out.print(sib.value + " ");
+        System.out.println();
+
+  
+        System.out.print("Hojas: ");
+        for (Node n : Arrays.asList(A,B,C,D,E)) if (n.children.isEmpty()) System.out.print(n.value + " ");
+        System.out.println();
+
+    
+        System.out.print("Internos: ");
+        for (Node n : Arrays.asList(A,B,C,D,E)) if (!n.children.isEmpty()) System.out.print(n.value + " ");
+        System.out.println();
+    }
+}
