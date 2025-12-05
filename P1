@@ -1,0 +1,40 @@
+package Tema3EstructurasNoLineales.recursividad;
+
+/*
+*ITESS-TICS 20225 Estructura y Organización de Datos
+*Agosto Dicimebre 2025
+*Docente:Francisco Javier Montecillo Puente
+*Descripción:Unidad 3 estructura no lineales 
+*objetivo: Demostrar el Método depth
+*Programador: Jorge Salvador Martinez Ayala, Aguilar Hernandez Olier
+*Fecha:04/12/2025
+ */
+
+
+import java.util.*;
+
+public class P1_Depth {
+
+    static class Node {
+        String value;
+        Node parent;
+        List<Node> children = new ArrayList<>();
+        Node(String v, Node p) { value = v; parent = p; }
+    }
+
+
+    public static int depth(Node p) {
+        if (p.parent == null) return 0; // es la raíz
+        return 1 + depth(p.parent);
+    }
+
+    public static void main(String[] args) {
+        Node root = new Node("root", null);
+        Node a = new Node("a", root); root.children.add(a);
+        Node b = new Node("b", a); a.children.add(b);
+
+        System.out.println("Depth de root: " + depth(root)); // 0
+        System.out.println("Depth de a: " + depth(a));       // 1
+        System.out.println("Depth de b: " + depth(b));       // 2
+    }
+}
