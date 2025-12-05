@@ -1,0 +1,62 @@
+package Tema3EstructurasNoLineales.recursividad;
+
+/*
+*ITESS-TICS 20225 Estructura y Organización de Datos
+*Agosto Dicimebre 2025
+*Docente:Francisco Javier Montecillo Puente
+*Descripción:Unidad 3 estructura no lineales 
+*objetivo: Demostrar el heightBad y height
+*Programador:Martinez Ayala Jorge Salvador, Aguilar Hernandez Olier
+*Fecha:04/12/2025
+ */
+
+import java.util.*;
+
+public class P2_Height {
+
+    static class Node {
+        String value;
+        Node parent;
+        List<Node> children = new ArrayList<>();
+        Node(String v, Node p) { value = v; parent = p; }
+    }
+
+
+    public static int depth(Node p) {
+        if (p.parent == null) return 0;
+        return 1 + depth(p.parent);
+    }
+
+
+    public static int heightBad(List<Node> allNodes) {
+        int h = 0;
+        for (Node p : allNodes) {
+            if (p.children.isEmpty()) { // hoja
+                h = Math.max(h, depth(p));
+            }
+        }
+        return h;
+    }
+
+
+    public static int height(Node p) {
+        int h = 0;
+        for (Node c : p.children) {
+            h = Math.max(h, 1 + height(c));
+        }
+        return h;
+    }
+
+    public static void main(String[] args) {
+        Node root = new Node("R", null);
+        Node n1 = new Node("N1", root); root.children.add(n1);
+        Node n2 = new Node("N2", root); root.children.add(n2);
+        Node n3 = new Node("N3", n1); n1.children.add(n3);
+
+        List<Node> all = Arrays.asList(root, n1, n2, n3);
+
+        System.out.println("heightBad: " + heightBad(all)); // espera 2
+        System.out.println("height(root): " + height(root)); // espera 2
+        System.out.println("height(n1): " + height(n1));     // espera 1
+    }
+}
