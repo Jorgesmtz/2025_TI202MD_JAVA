@@ -1,0 +1,18 @@
+package tema4.ordenamientobusqueda;
+import java.util.Arrays;
+import java.util.Random;
+
+public class QuickSort {
+    public static void main(String[] args) {
+        int[] datos = new int[1000000];
+        Random rand = new Random();
+
+        for (int i = 0; i < datos.length; i++) {
+            datos[i] = rand.nextInt(1000000);
+        }
+
+        Arrays.sort(datos); // QuickSort interno de Java
+
+        System.out.println("Ordenamiento quick sort completado.");
+    }
+}
