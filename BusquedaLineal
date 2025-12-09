@@ -1,0 +1,27 @@
+package tema4.ordenamientobusqueda;
+import java.util.Random;
+
+public class BusquedaLineal {
+    public static void main(String[] args) {
+        int[] datos = new int[1000000];
+        Random rand = new Random();
+        int target = 123456;
+
+        for (int i = 0; i < datos.length; i++) {
+            datos[i] = rand.nextInt(1000000);
+        }
+
+        boolean encontrado = false;
+        for (int i = 0; i < datos.length; i++) {
+            if (datos[i] == target) {
+                encontrado = true;
+                System.out.println("Elemento encontrado en la posición: " + i);
+                break;
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("Elemento no encontrado.");
+        }
+    }
+}
