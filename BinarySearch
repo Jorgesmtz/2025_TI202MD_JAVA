@@ -1,0 +1,25 @@
+package tema4.ordenamientobusqueda;
+import java.util.Arrays;
+import java.util.Random;
+
+public class BinarySearch {
+    public static void main(String[] args) {
+        int[] datos = new int[1000000];
+        Random rand = new Random();
+        int target = 123456;
+
+        for (int i = 0; i < datos.length; i++) {
+            datos[i] = rand.nextInt(1000000);
+        }
+
+        Arrays.sort(datos); // Ordenar primero
+
+        int resultado = Arrays.binarySearch(datos, target);
+
+        if (resultado >= 0) {
+            System.out.println("Elemento encontrado en la posición: " + resultado);
+        } else {
+            System.out.println("Elemento no encontrado.");
+        }
+    }
+}
