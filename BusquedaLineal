@@ -1,3 +1,11 @@
+
+/*
+*ITESS-TICS 20225 Estructura y Organización de Datos
+*Agosto Dicimebre 2025
+*Docente:Francisco Javier Montecillo Puente
+*Programador: Martinez Aayala Jorge Salvador, Aguilar Hernandez Oliver
+*Fecha:09/12/2025
+ */
 package tema4.ordenamientobusqueda;
 import java.util.Random;
 
